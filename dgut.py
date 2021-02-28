@@ -62,7 +62,7 @@ if __name__ == '__main__':
     username = "学号"
     password = "密码"
 
-    login_url = urls['jwxt']
+    login_url = urls['ehall']
 
     cas = CasDgut(login_url=login_url, username=username, password=password)
     home_url = cas.login()
@@ -77,9 +77,11 @@ if __name__ == '__main__':
     re_url = response.url
     print('redirect url: ', re_url)
 
+    print(sess.cookies)
+
     response = sess.get(url=re_url)
     text = response.text
-    print('text: ', text)
+    # print('text: ', text)
 
     # '''
     # Get Access Token
